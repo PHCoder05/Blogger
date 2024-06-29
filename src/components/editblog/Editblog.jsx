@@ -114,15 +114,15 @@ function EditBlog() {
           background: mode === "dark" ? "#353b48" : "rgb(226, 232, 240)",
           borderBottom:
             mode === "dark"
-              ? " 4px solid rgb(226, 232, 240)"
-              : " 4px solid rgb(30, 41, 59)",
+              ? "4px solid rgb(226, 232, 240)"
+              : "4px solid rgb(30, 41, 59)",
         }}
       >
         {/* Top Item */}
         <div className="mb-2 flex justify-between">
           <div className="flex gap-2 items-center">
             {/* Dashboard Link */}
-            <Link to={"/dashboard"}>
+            <Link to="/dashboard">
               <BsFillArrowLeftCircleFill size={25} />
             </Link>
 
@@ -162,7 +162,7 @@ function EditBlog() {
           {/* Thumbnail Input */}
           <input
             type="file"
-            className="shadow-[inset_0_0_4px_rgba(0,0,0,0.6)] placeholder-black w-full rounded-md p-1"
+            className="shadow-[inset_0_0_4px_rgba(0,0,0,0.6)] w-full rounded-md p-1"
             style={{
               background: mode === "dark" ? "#dcdde1" : "rgb(226, 232, 240)",
             }}
@@ -172,7 +172,7 @@ function EditBlog() {
 
         {/* Title Input */}
         <div className="mb-3">
-           <input
+          <input
             type="text"
             className={`shadow-[inset_0_0_4px_rgba(0,0,0,0.6)] w-full rounded-md p-1.5 outline-none ${
               mode === "dark" ? "placeholder-white" : "placeholder-gray-500"
@@ -205,14 +205,14 @@ function EditBlog() {
         {/* Editor */}
         <Editor
           apiKey="7tpqrdfglcn651x8kwliw2run7rze6zzvgvrob6lux0hc7ya"
-          initialValue={blogs.content} // Initialize with the current content
-          value={blogs.content} // Ensure controlled component behavior
-          onEditorChange={(content, editor) => {
+          initialValue={blogs.content}
+          value={blogs.content}
+          onEditorChange={(content) => {
             setBlogs({ ...blogs, content }); // Update content in state
           }}
           init={{
             plugins: "a11ychecker advcode advlist advtable anchor autocorrect autolink autoresize autosave casechange charmap checklist code codesample directionality editimage emoticons export footnotes formatpainter fullscreen help image importcss inlinecss insertdatetime link linkchecker lists media mediaembed mentions mergetags nonbreaking pagebreak pageembed permanentpen powerpaste preview quickbars save searchreplace table tableofcontents template tinydrive tinymcespellchecker typography visualblocks visualchars wordcount",
-            toolbar: "YOUR_TOOLBAR_CONFIG",
+            toolbar: "undo redo | formatselect | bold italic underline strikethrough | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat",
             height: 400,
             menubar: true,
             branding: false,
