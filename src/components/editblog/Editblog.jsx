@@ -72,7 +72,7 @@ function EditBlog() {
   };
 
   const uploadImage = async () => {
-    const imageRef = ref(storage, blogimage/${thumbnail.name});
+    const imageRef = ref(storage, `blogimage/${thumbnail.name}`);
     try {
       const snapshot = await uploadBytes(imageRef, thumbnail);
       const url = await getDownloadURL(snapshot.ref);
@@ -169,37 +169,36 @@ function EditBlog() {
             onChange={(e) => setThumbnail(e.target.files[0])}
           />
         </div>
-<div className="mb-3">
-  <input
-    type="text"
-    className={`shadow-[inset_0_0_4px_rgba(0,0,0,0.6)] w-full rounded-md p-1.5 outline-none ${
-      mode === "dark" ? "placeholder-white" : "placeholder-gray-500"
-    }`}
-    placeholder="Enter Your Title"
-    style={{
-      background: mode === "dark" ? "#dcdde1" : "rgb(226, 232, 240)",
-    }}
-    value={blogs.title}
-    onChange={(e) => setBlogs({ ...blogs, title: e.target.value })}
-  />
-</div>
 
+        {/* Title Input */}
+        <div className="mb-3">
+          <input
+            type="text"
+            className={`shadow-[inset_0_0_4px_rgba(0,0,0,0.6)] w-full rounded-md p-1.5 outline-none ${
+              mode === "dark" ? "placeholder-white" : "placeholder-gray-500"
+            }`}
+            placeholder="Enter Your Title"
+            style={{
+              background: mode === "dark" ? "#dcdde1" : "rgb(226, 232, 240)",
+            }}
+            value={blogs.title}
+            onChange={(e) => setBlogs({ ...blogs, title: e.target.value })}
+          />
+        </div>
 
         {/* Category Input */}
         <div className="mb-3">
           <input
             type="text"
-            className={shadow-[inset_0_0_4px_rgba(0,0,0,0.6)] w-full rounded-md p-1.5 outline-none ${
-              mode === "dark" ? "placeholder-black" : "placeholder-black"
-            }}
+            className={`shadow-[inset_0_0_4px_rgba(0,0,0,0.6)] w-full rounded-md p-1.5 outline-none ${
+              mode === "dark" ? "placeholder-white" : "placeholder-gray-500"
+            }`}
             placeholder="Enter Your Category"
             style={{
               background: mode === "dark" ? "#dcdde1" : "rgb(226, 232, 240)",
             }}
             value={blogs.category}
-            onChange={(e) =>
-              setBlogs({ ...blogs, category: e.target.value })
-            }
+            onChange={(e) => setBlogs({ ...blogs, category: e.target.value })}
           />
         </div>
 
