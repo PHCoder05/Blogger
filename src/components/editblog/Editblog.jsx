@@ -77,12 +77,8 @@ const EditBlog = () => {
   };
 
   return (
-    <div className="container mx-auto max-w-5xl py-6">
-      <div
-        className={`p-5 ${
-          mode === "dark" ? "bg-gray-800 text-white" : "bg-gray-100 text-black"
-        }`}
-      >
+    <div className={`container mx-auto max-w-5xl py-6 ${mode === "dark" ? "bg-gray-800 text-white" : "bg-gray-100 text-black"}`}>
+      <div className="p-5">
         <div className="mb-2 flex justify-between items-center">
           <Link to="/dashboard">
             <BsFillArrowLeftCircleFill size={25} />
@@ -103,18 +99,14 @@ const EditBlog = () => {
         </Typography>
         <input
           type="file"
-          className={`shadow-inner w-full rounded-md p-2 ${
-            mode === "dark" ? "bg-gray-700" : "bg-gray-200"
-          }`}
+          className={`shadow-inner rounded-md p-2 ${mode === "dark" ? "bg-gray-700" : "bg-gray-200"}`}
           onChange={(e) => setNewThumbnail(e.target.files[0])}
         />
 
         <div className="mb-3">
           <input
             type="text"
-            className={`shadow-inner w-full rounded-md p-2 ${
-              mode === "dark" ? "bg-gray-700 text-white" : "bg-gray-200"
-            }`}
+            className={`shadow-inner rounded-md p-2 ${mode === "dark" ? "bg-gray-700 text-white" : "bg-gray-200"}`}
             placeholder="Enter Your Title"
             value={blog.title}
             onChange={(e) => setBlog({ ...blog, title: e.target.value })}
@@ -124,9 +116,7 @@ const EditBlog = () => {
         <div className="mb-3">
           <input
             type="text"
-            className={`shadow-inner w-full rounded-md p-2 ${
-              mode === "dark" ? "bg-gray-700 text-white" : "bg-gray-200"
-            }`}
+            className={`shadow-inner rounded-md p-2 ${mode === "dark" ? "bg-gray-700 text-white" : "bg-gray-200"}`}
             placeholder="Enter Your Category"
             value={blog.category}
             onChange={(e) => setBlog({ ...blog, category: e.target.value })}
@@ -139,10 +129,8 @@ const EditBlog = () => {
           value={blog.content}
           onEditorChange={(content) => setBlog({ ...blog, content })}
           init={{
-            plugins:
-              "advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table paste code help wordcount",
-            toolbar:
-              "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help",
+            plugins: "advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table paste code help wordcount",
+            toolbar: "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help",
             height: 400,
             menubar: false,
           }}
