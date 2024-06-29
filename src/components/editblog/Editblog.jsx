@@ -236,4 +236,4 @@ function EditBlog() {
   );
 }
 
-export default EditBlog;
+export default Edit
