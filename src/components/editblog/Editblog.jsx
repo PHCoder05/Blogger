@@ -88,9 +88,9 @@ const EditBlog = () => {
 
         {blog.thumbnail && !newThumbnail && (
           <img
-            className="w-full rounded-md mb-3"
             src={blog.thumbnail}
             alt="Blog Thumbnail"
+            style={{ width: '100%', borderRadius: '0.375rem', marginBottom: '1rem' }} // Inline styles instead of Tailwind classes
           />
         )}
 
