@@ -174,7 +174,7 @@ function EditBlog() {
         <div className="mb-3">
           <input
             type="text"
-            className={`shadow-[inset_0_0_4px_rgba(0,0,0,0.6)] w-full rounded-md p-1.5 outline-none ${
+            className={`shadow-[inset_0_0_4px_rgba(0,0,0,0.6)] full rounded-md p-1.5 outline-none ${
               mode === "dark" ? "placeholder-white" : "placeholder-gray-500"
             }`}
             placeholder="Enter Your Title"
