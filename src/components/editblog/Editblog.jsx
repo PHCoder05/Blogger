@@ -9,7 +9,6 @@ import toast from "react-hot-toast";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { fireDb, storage } from "../../../firebase/FirebaseConfig";
 
-
 function EditBlog() {
   const { id } = useParams();
   const context = useContext(myContext);
