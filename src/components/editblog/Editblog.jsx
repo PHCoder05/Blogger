@@ -169,24 +169,21 @@ function EditBlog() {
             onChange={(e) => setThumbnail(e.target.files[0])}
           />
         </div>
+<div className="mb-3">
+  <input
+    type="text"
+    className={`shadow-[inset_0_0_4px_rgba(0,0,0,0.6)] w-full rounded-md p-1.5 outline-none ${
+      mode === "dark" ? "placeholder-white" : "placeholder-gray-500"
+    }`}
+    placeholder="Enter Your Title"
+    style={{
+      background: mode === "dark" ? "#dcdde1" : "rgb(226, 232, 240)",
+    }}
+    value={blogs.title}
+    onChange={(e) => setBlogs({ ...blogs, title: e.target.value })}
+  />
+</div>
 
-        {/* Title Input */}
-        <div className="mb-3">
-          <input
-            type="text"
-            className={shadow-[inset_0_0_4px_rgba(0,0,0,0.6)] w-full rounded-md p-1.5 outline-none ${
-              mode === "dark" ? "placeholder-black" : "placeholder-black"
-            }}
-            placeholder="Enter Your Title"
-            style={{
-              background: mode === "dark" ? "#dcdde1" : "rgb(226, 232, 240)",
-            }}
-            value={blogs.title}
-            onChange={(e) =>
-              setBlogs({ ...blogs, title: e.target.value })
-            }
-          />
-        </div>
 
         {/* Category Input */}
         <div className="mb-3">
